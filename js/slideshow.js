@@ -56,15 +56,60 @@ var slides = [
     options: [
       {
         text: "Parking",
-        destination: 4
+        destination: null,
+        link: "map.html"
       },
       {
         text: "Finding showcases",
-        destination: 5
+        destination: null,
+        link: "map.html"
       },
       {
         text: "Finding Food",
-        destination: 6
+        destination: null,
+        link: "map.html"
+      }
+    ],
+    previous: 0
+  },
+  {
+    title: "I need help with...",
+    options: [
+      {
+        text: "Parking",
+        destination: null,
+        link: "map.html"
+      },
+      {
+        text: "Finding my showcase",
+        destination: null,
+        link: "map.html"
+      },
+      {
+        text: "Setting up",
+        destination: null,
+        link: "map.html"
+      }
+    ],
+    previous: 0
+  },
+  {
+    title: "I need help with...",
+    options: [
+      {
+        text: "Parking",
+        destination: null,
+        link: "map.html"
+      },
+      {
+        text: "Setting up",
+        destination: null,
+        link: "map.html"
+      },
+      {
+        text: "Contacting a volunteer",
+        destination: null,
+        link: "map.html"
       }
     ],
     previous: 0
