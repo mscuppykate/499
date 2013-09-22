@@ -10,12 +10,21 @@ function update_slide(){
   $('#slide_options').html(''); //empty options
   // Create each option
   for (var i=0;i<slides[current_slide].options.length;i++){
-    $('#slide_options').append('<li><a class="btn btn-primary slide_option" href="#" data-dest="'+ slides[current_slide].options[i].destination +'">'+ slides[current_slide].options[i].text +'</a></li>')
+    var href;
+    if (slides[current_slide].options[i].hasOwnProperty('link')){
+      href = slides[current_slide].options[i].link;
+    }
+    else{
+      href = "#"
+    }
+    $('#slide_options').append('<li><a class="btn btn-primary slide_option" href="'+ href +'" data-dest="'+ slides[current_slide].options[i].destination +'">'+ slides[current_slide].options[i].text +'</a></li>')
   }
 
   // Click events for each option to continue down the path
   $('.slide_option').click(function(){
-    change_slide($(this).data('dest'));
+    if ($(this).data('dest') != null){
+      change_slide($(this).data('dest'));
+    }
   });
 
   // Create and link previous button
