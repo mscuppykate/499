@@ -41,6 +41,13 @@
       map = new google.maps.Map(document.getElementById("map"),
           mapOptions);
 
+      var kmlLayer = new google.maps.KmlLayer({
+        url: 'http://mapsengine.google.com/map/kml?mid=z-KSz345Pf_Y.ki1Dj7vL_Ggo',
+        suppressInfoWindows: true,
+        map: map
+        });
+
+
       if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
           var pos = new google.maps.LatLng(position.coords.latitude,
