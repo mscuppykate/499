@@ -129,3 +129,25 @@ var slides = [
 $(document).ready(function(){
   setup();
 })
+
+// Rewrite for above code. Currently not used.
+
+var Slideshow = function(){
+  this.current_slide = 0;
+  this.slides = [];
+}
+
+Slideshow.prototype.change_slide = function(index){
+
+}
+
+var Slide = function(title){
+  this.title = title;
+  this.options = [];
+}
+
+var Option = function(text, destination, link){
+  this.text = text;
+  this.destination = destination;
+  this.link = link;
+}
