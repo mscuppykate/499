@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Volunteer Info and Tips</title>
+    <title>Prototype Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -11,29 +12,12 @@
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-          <h1>Do:</h1>
-          <ul>
-            <h2><li>Greet each vistor with a smile</li>
-            <li>Guests right of way</li></h2>
-          </ul>
-          <h1>Don't:</h1>
-          <ul>
-            <h2><li>Chew with your mouth open</li>
-            <li>Leave your phone at home</li>
-            <li>Ignore visitors</li>
-            <li>Be late for your post</li></h2>
-          </ul>
-      </div>
-    </div>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.0.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/slideshow.js"></script>
+  </head>
+  <body>
+    <%= yield %>
   </body>
 </html>

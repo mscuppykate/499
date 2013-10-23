@@ -23,17 +23,17 @@ var slides_data = [
       {
         text: "Parking",
         destination: null,
-        link: "map.html"
+        link: "map"
       },
       {
         text: "Finding showcases",
         destination: null,
-        link: "map.html"
+        link: "map"
       },
       {
         text: "Finding Food",
         destination: null,
-        link: "map.html"
+        link: "map"
       }
     ],
     previous: 0
@@ -44,17 +44,17 @@ var slides_data = [
       {
         text: "Parking",
         destination: null,
-        link: "map.html"
+        link: "map"
       },
       {
         text: "Finding my showcase",
         destination: null,
-        link: "map.html"
+        link: "map"
       },
       {
         text: "Setting up",
         destination: null,
-        link: "map.html"
+        link: "map"
       }
     ],
     previous: 0
@@ -65,17 +65,17 @@ var slides_data = [
       {
         text: "Parking",
         destination: null,
-        link: "map.html"
+        link: "map"
       },
       {
         text: "Setting up",
         destination: null,
-        link: "map.html"
+        link: "map"
       },
       {
         text: "Contacting a volunteer",
         destination: null,
-        link: "map.html"
+        link: "map"
       }
     ],
     previous: 0
