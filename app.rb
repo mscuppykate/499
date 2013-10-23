@@ -16,6 +16,25 @@ end
 
 alert = nil
 
+get "/" do
+  erb :index
+end
+
+get "/map" do
+  erb :map
+end
+
+get "/help" do
+  erb :help
+end
+
+get "/volunteer" do
+  erb :volunteer
+end
+
+get "/info" do
+  erb :info
+end
 get '/update_alert' do
   # Auth check
   protected!
