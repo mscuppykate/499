@@ -14,28 +14,35 @@ helpers do
   end
 end
 
-alert = nil
+alert = ""
 
 get "/" do
+  @alert = alert
   erb :index
 end
 
 get "/map*" do
+  @alert = alert
   erb :map
 end
 
 get "/help*" do
+  @alert = alert
   erb :help
 end
 
 get "/volunteer*" do
+  @alert = alert
   erb :volunteer
 end
 
 get "/info*" do
+  @alert = alert
   erb :info
 end
+
 get '/alert*' do
+  @alert = alert
   # Auth check
   protected!
 

@@ -160,5 +160,7 @@ function setup(){
 
 
 $(document).ready(function(){
-  setup();
+  if ($('#slide_title') != undefined) {
+    setup();
+  }
 })
