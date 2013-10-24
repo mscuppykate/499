@@ -41,6 +41,11 @@ get "/info*" do
   erb :info
 end
 
+get "/who_to_contact*" do
+  @alert = alert
+  erb :who_to_contact
+end
+
 get '/alert*' do
   @alert = alert
   # Auth check
