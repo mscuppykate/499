@@ -13,6 +13,10 @@ var slides_data = [
       {
         text: "Vendor",
         destination: 3
+      },
+      {
+        text: "Volunteer",
+        destination: 4
       }
     ],
     previous: null
@@ -77,6 +81,32 @@ var slides_data = [
         destination: null,
         link: "map"
       }
+    ],
+    previous: 0
+  },
+  {
+    title: "I need help with...",
+    options: [
+      {
+        text: "Parking",
+        destination: null,
+        link: "map"
+      },
+      {
+        text: "Find Volunteer Locations",
+        destination: null,
+        link: "map"
+      },
+      {
+        text: "Volunteer Info",
+        destination: null,
+        link: "volunteer"
+      },
+      {
+        text: "Who to Contact",
+        destination: null,
+        link: "who_to_contact"
+      },
     ],
     previous: 0
   }
