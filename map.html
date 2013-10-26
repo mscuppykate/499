@@ -203,63 +203,63 @@
   handicap_parking.setMap(map);
   car_club_area.setMap(map);
   
-  var program_sales = new google.maps.Marker({
-    position: new google.maps.LatLng(38.0484012537138, -84.59620714187622),
-    title:"Program Sales"
-});;
+//   var program_sales = new google.maps.Marker({
+//     position: new google.maps.LatLng(38.0484012537138, -84.59620714187622),
+//     title:"Program Sales"
+// });;
 
-program_sales.setMap(map);
+// program_sales.setMap(map);
   
-  var car_club_pos = {};
+//   var car_club_pos = {};
   
-  car_club_pos['bmw_club'] = {
-      pos: new google.maps.LatLng(38.04713624341897, -84.594447612762),
-      club_name:'BMW'
-  };
-  car_club_pos['miata_club'] = {
-      pos: new google.maps.LatLng(38.04694506409528, -84.59453344345093),
-      club_name:'Miata'
-  };
-  car_club_pos['corvair_club'] = {
-      pos: new google.maps.LatLng(38.04693311537097, -84.59471583366394),
-      club_name:'Corvair'
-  };
-  car_club_pos['italian_club'] = {
-      pos: new google.maps.LatLng(38.046712063619644, -84.59480702877045),
-      club_name:'Italian'
-  };
-  car_club_pos['viper_club'] = {
-      pos: new google.maps.LatLng(38.04648503680181, -84.59495186805),
-      club_name:'Viper'
-  };
-  car_club_pos['cobra_club'] = {
-      pos: new google.maps.LatLng(38.0466284222426, -84.5956438779831),
-      club_name:'Cobra'
-  };
-  car_club_pos['porsche_club'] = {
-      pos: new google.maps.LatLng(38.046873371720736, -84.59648072719574),
-      club_name:'Porsche'
-  };
-  car_club_pos['corvette_club'] = {
-      pos: new google.maps.LatLng(38.047273653250464, -84.59720492362976),
-      club_name:'Corvette'
-  };
-  car_club_pos['mustang_club'] = {
-      pos: new google.maps.LatLng(38.04739313985023, -84.59764480590),
-      club_name:'Mustang'
-  };
+//   car_club_pos['bmw_club'] = {
+//       pos: new google.maps.LatLng(38.04713624341897, -84.594447612762),
+//       club_name:'BMW'
+//   };
+//   car_club_pos['miata_club'] = {
+//       pos: new google.maps.LatLng(38.04694506409528, -84.59453344345093),
+//       club_name:'Miata'
+//   };
+//   car_club_pos['corvair_club'] = {
+//       pos: new google.maps.LatLng(38.04693311537097, -84.59471583366394),
+//       club_name:'Corvair'
+//   };
+//   car_club_pos['italian_club'] = {
+//       pos: new google.maps.LatLng(38.046712063619644, -84.59480702877045),
+//       club_name:'Italian'
+//   };
+//   car_club_pos['viper_club'] = {
+//       pos: new google.maps.LatLng(38.04648503680181, -84.59495186805),
+//       club_name:'Viper'
+//   };
+//   car_club_pos['cobra_club'] = {
+//       pos: new google.maps.LatLng(38.0466284222426, -84.5956438779831),
+//       club_name:'Cobra'
+//   };
+//   car_club_pos['porsche_club'] = {
+//       pos: new google.maps.LatLng(38.046873371720736, -84.59648072719574),
+//       club_name:'Porsche'
+//   };
+//   car_club_pos['corvette_club'] = {
+//       pos: new google.maps.LatLng(38.047273653250464, -84.59720492362976),
+//       club_name:'Corvette'
+//   };
+//   car_club_pos['mustang_club'] = {
+//       pos: new google.maps.LatLng(38.04739313985023, -84.59764480590),
+//       club_name:'Mustang'
+//   };
   
-  var car_club_marker;
+//   var car_club_marker;
   
-  for(var club in car_club_pos){
-      var markOpt = {
-      map:map,
-      position: car_club_pos[club].pos,
-      title: car_club_pos[club].club_name
-      };
+//   for(var club in car_club_pos){
+//       var markOpt = {
+//       map:map,
+//       position: car_club_pos[club].pos,
+//       title: car_club_pos[club].club_name
+//       };
       
-      car_club_marker = new google.maps.Marker(markOpt);
-  }
+//       car_club_marker = new google.maps.Marker(markOpt);
+//   }
 
       
       if(navigator.geolocation) {
