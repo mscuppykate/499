@@ -18,7 +18,7 @@ alert = ""
 
 get "/" do
   @alert = alert
-  erb :index
+  erb :index, layout: :no_nav_layout
 end
 
 get "/map*" do
