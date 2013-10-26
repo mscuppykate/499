@@ -41,9 +41,9 @@ get "/info*" do
   erb :info
 end
 
-get "/who_to_contact*" do
+get "/contact*" do
   @alert = alert
-  erb :who_to_contact
+  erb :contact
 end
 
 get '/alert*' do
