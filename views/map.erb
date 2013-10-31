@@ -151,6 +151,22 @@
 
   var car_club_area;
 
+  var all_parking;
+
+  var all_parking_coord = [
+    new google.maps.LatLng(38.048716, -84.599404),
+    new google.maps.LatLng(38.048590, -84.597838),
+    new google.maps.LatLng(38.048976, -84.597709),
+    new google.maps.LatLng(38.049291, -84.597602),
+    new google.maps.LatLng(38.048556, -84.594641),
+    new google.maps.LatLng(38.049223, -84.594415),
+    new google.maps.LatLng(38.049764, -84.596647),
+    new google.maps.LatLng(38.049654, -84.597087),
+    new google.maps.LatLng(38.049443, -84.597173),
+    new google.maps.LatLng(38.049848, -84.599029),
+    new google.maps.LatLng(38.048716, -84.599404)
+  ];
+
     var vip_parking_coord = [
      new google.maps.LatLng(38.049572, -84.598181),
      new google.maps.LatLng(38.049017, -84.598315),
@@ -225,6 +241,7 @@
   vip_parking.setMap(map);
   handicap_parking.setMap(map);
   car_club_area.setMap(map);
+  all_parking_coord.setMap(map);
 
   //adding the bathrooms
 
