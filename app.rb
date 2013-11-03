@@ -36,6 +36,11 @@ get "/volunteer*" do
   erb :volunteer
 end
 
+get "/schedule*" do
+  @alert = alert
+  erb :schedule
+end
+
 get "/info*" do
   @alert = alert
   erb :info
