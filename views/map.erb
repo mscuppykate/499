@@ -298,6 +298,48 @@
 
    bathrooms.setMap(map);
 
+   // adding food and vendors
+
+  var food;
+  var vendors;
+
+  var food_coord = [
+   new google.maps.LatLng(38.048978, -84.596561),
+   new google.maps.LatLng(38.048775, -84.596647),
+   new google.maps.LatLng(38.048742, -84.596432),
+   new google.maps.LatLng(38.048928, -84.596336),
+   new google.maps.LatLng(38.048978, -84.596561)
+  ];
+
+  var vendor_coord = [
+   new google.maps.LatLng(38.048691, -84.597259),
+   new google.maps.LatLng(38.048573, -84.597312),
+   new google.maps.LatLng(38.048488, -84.597033),
+   new google.maps.LatLng(38.048615, -84.596969),
+   new google.maps.LatLng(38.048691, -84.597259)
+  ];
+
+  food = new google.maps.Polygon({
+    paths: food_coord,
+    strokeColor: '#FFFF00',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FFFF00',
+    fillOpacity: 0.35
+  });
+
+  vendors = new google.maps.Polygon({
+    paths: vendor_coord,
+    strokeColor: '#FFFF00',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FFFF00',
+    fillOpacity: 0.35
+  });
+
+  food.setMap(map);
+  vendors.setMap(map);
+
    var bmw_car_club;
    var miata_car_club;
    var corvair_car_club;
