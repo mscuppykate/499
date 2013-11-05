@@ -107,9 +107,10 @@
 
   var car_circle;
   var i = 0;
-  for (var car in show_car_circles) {
-    var name = show_car_circles[car].name;
-    var showCarOptions = {
+  //function show_cars() {
+    for (var car in show_car_circles) {
+      var name = show_car_circles[car].name;
+      var showCarOptions = {
       strokeColor: '#FF0000',
       strokeOpacity: 0.8,
       strokeWeight: 2,
@@ -118,12 +119,25 @@
       map: map,
       center: show_car_circles[car].center,
       radius: 11
-    };
-    // Add the circle for this to the map.
-    car_circle = new google.maps.Circle(showCarOptions);
-    attach_info_window(car_circle, car);
-    i = i + 1;
-  }
+      };
+      // Add the circle for this to the map.
+      car_circle = new google.maps.Circle(showCarOptions);
+      attach_info_window(car_circle, car);
+      i = i + 1;
+    }
+  //}
+
+  // function hide_cars() {
+  //   for (var car in show_car_circles) {
+  //     var name = show_car_circles[car].name;
+  //     var showCarOptions = null;
+  //     // Add the circle for this to the map.
+  //     car_circle = new google.maps.Circle(showCarOptions);
+  //     attach_info_window(car_circle, car);
+  //     i = i + 1;
+  //   }
+  // }
+
 
   function attach_info_window(circle, car){
     var infowindow = new google.maps.InfoWindow(
@@ -225,6 +239,15 @@
     new google.maps.LatLng(38.04758875217923, -84.59769308567047)
     ];
 
+    show_field = new google.maps.Polygon({
+    paths: show_field_coord,
+    strokeColor: '#663300',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#663300',
+    fillOpacity: 0.5
+  });
+
     all_parking = new google.maps.Polygon({
     paths: all_parking_coord,
     strokeColor: '#0BA9CC',
@@ -271,13 +294,10 @@
   });
   
   car_club_area.setMap(map);
-
-
   all_parking.setMap(map);
-  //show_field.setMap(map);
+  show_field.setMap(map);
 
   //adding the bathrooms
-
   var bathrooms;
   var bathroom_coord = [
     new google.maps.LatLng(38.048598, -84.596143),
@@ -299,7 +319,6 @@
    bathrooms.setMap(map);
 
    // adding food and vendors
-
   var food;
   var vendors;
 
@@ -321,19 +340,19 @@
 
   food = new google.maps.Polygon({
     paths: food_coord,
-    strokeColor: '#FFFF00',
+    strokeColor: '#FF00FF',
     strokeOpacity: 0.8,
     strokeWeight: 2,
-    fillColor: '#FFFF00',
+    fillColor: '#FF00FF',
     fillOpacity: 0.35
   });
 
   vendors = new google.maps.Polygon({
     paths: vendor_coord,
-    strokeColor: '#FFFF00',
+    strokeColor: '#FF00FF',
     strokeOpacity: 0.8,
     strokeWeight: 2,
-    fillColor: '#FFFF00',
+    fillColor: '#FF00FF',
     fillOpacity: 0.35
   });
 
@@ -539,6 +558,46 @@
     fillOpacity: 0.35
   });
 
+   ///////////////////////////////////////////////////
+
+   //map reset function
+  function map_reset() {
+      //hide individual polygons
+      bmw_car_club.setMap(null);
+      miata_car_club.setMap(null);
+      corvair_car_club.setMap(null);
+      italian_car_club.setMap(null);
+      viper_car_club.setMap(null);
+      brit_car_club.setMap(null);
+      cobra_car_club.setMap(null);
+      landrover_car_club.setMap(null);
+      jaguar_car_club.setMap(null);
+      corvette_car_club.setMap(null);
+      porsche_car_club.setMap(null);
+      gen_parking.setMap(null);
+      vip_parking.setMap(null);
+      handicap_parking.setMap(null);
+      //hide_cars();
+
+      //now show large polygons
+      car_club_area.setMap(map);
+      all_parking.setMap(map);
+      bathrooms.setMap(map);
+      vendors.setMap(map);
+      food.setMap(map);
+      show_field.setMap(map);
+    } 
+
+   /////////////////////////////////////////////////////////////////////////////////////////////////
+   //onZoom Listener
+   google.maps.event.addListener(map, 'zoom_changed', function() {
+     if(map.getZoom() < 17)
+     {
+        map_reset();
+     }
+    });
+
+
    /////////////////////////////////////////////////////////////////////////////////////////////////
    //Onclick Listeners
 
@@ -605,6 +664,16 @@
       });
     map.setZoom(18);
     map.panTo(center);
+  });
+
+  // Show Field Polygon Listener
+  google.maps.event.addListener(show_field, 'click', function() {
+    show_field.setMap(null); // Hide the big car club polygon
+    // Show all the individual car club polygons
+    //show_cars();
+    // Set map zoom and pan to location
+    map.setZoom(18);
+    map.panTo( new google.maps.LatLng(38.04769402134408, -84.59618203844605));
   });
 
   // Car Club Polygon Listener
@@ -755,6 +824,43 @@
         position: center,
         map: map
       });
+    map.setZoom(19);
+    map.panTo(center);
+  });
+
+  //Food and Vendor Polygon Listener
+    google.maps.event.addListener(vendors, 'click', function() {
+    //food.setMap(null); // Hide the big polygon
+    //vendor.setMap(null);
+    var center = new google.maps.LatLng(38.0485915501854, -84.59717311467705);
+    // Show all the individual polygons
+    //food.setMap(map);
+    //vendor.setMap(map);
+    var infowindow = new google.maps.InfoWindow(
+      { content: "Vendors",
+        size: new google.maps.Size(50,50),
+        position: center,
+        map: map
+      });
+    // Set map zoom and pan to location
+    map.setZoom(19);
+    map.panTo(center);
+  });
+
+  google.maps.event.addListener(food, 'click', function() {
+    //food.setMap(null); // Hide the big polygon
+    //vendor.setMap(null);
+    var center = new google.maps.LatLng(38.04892909325019, -84.5965508421856);
+    // Show all the individual polygons
+    //food.setMap(map);
+    //vendor.setMap(map);
+    var infowindow = new google.maps.InfoWindow(
+      { content: "Food",
+        size: new google.maps.Size(50,50),
+        position: center,
+        map: map
+      });
+    // Set map zoom and pan to location
     map.setZoom(19);
     map.panTo(center);
   });
