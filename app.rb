@@ -31,6 +31,21 @@ get "/help*" do
   erb :help
 end
 
+get "/guestservices" do
+  @alert = alert
+  erb :guestservices
+end
+
+get "/judge" do
+  @alert = alert
+  erb :judge
+end
+
+get "/volunteerinfo*" do
+  @alert = alert
+  erb :volunteerinfo
+end
+
 get "/volunteer*" do
   @alert = alert
   erb :volunteer
