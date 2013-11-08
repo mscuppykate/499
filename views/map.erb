@@ -6,20 +6,38 @@
 </div>
 <div class="row">
   <div class="col-md-6">
-    <ul>
-      <li><a href="" id="vintage_link">Vintage</a></li>
-      <li><a href="" id="antique_link">Antique</a></li>
-      <li><a href="" id="early_mustang_link">Early Mustang</a></li>
-      <li><a href="" id="mustang_future_link">Future Mustang</a></li>
-      <li><a href="" id="preservation_link">Preservation</a></li>
-      <li><a href="" id="mustang_gen_link">Mustang</a></li>
-      <li><a href="" id="sports_classics_link">Sports Classics</a></li>
-      <li><a href="" id="collector_foreign_link">Foreign Collector</a></li>
-      <li><a href="" id="mini_link">Mini</a></li>
-      <li><a href="" id="amer_perform_link">American Performance</a></li>
-      <li><a href="" id="collect_closed_link">Closed Collection</a></li>
-      <li><a href="" id="collect_open_link">Open Collection</a></li>
-      <li><a href="" id="future_classics_link">Future Classics</a></li>
+    <h4>Looking for something in particular?</h4>
+    <h5>Showcases</h5>
+    <ul class="list-unstyled">
+      <li><a href="#" id="vintage_link">Vintage</a></li>
+      <li><a href="#" id="antique_link">Antique</a></li>
+      <li><a href="#" id="early_mustang_link">Early Mustang</a></li>
+      <li><a href="#" id="mustang_future_link">Future Mustang</a></li>
+      <li><a href="#" id="preservation_link">Preservation</a></li>
+      <li><a href="#" id="mustang_gen_link">Mustang</a></li>
+      <li><a href="#" id="sports_classics_link">Sports Classics</a></li>
+      <li><a href="#" id="collector_foreign_link">Foreign Collector</a></li>
+      <li><a href="#" id="mini_link">Mini</a></li>
+      <li><a href="#" id="amer_perform_link">American Performance</a></li>
+      <li><a href="#" id="collect_closed_link">Closed Collection</a></li>
+      <li><a href="#" id="collect_open_link">Open Collection</a></li>
+      <li><a href="#" id="future_classics_link">Future Classics</a></li>
+    </ul>
+    <h5>Car Clubs</h5>
+    <ul class="list-unstyled">
+      <li><a href="#" id="vintage_link">Vintage</a></li>
+      <li><a href="#" id="antique_link">Antique</a></li>
+      <li><a href="#" id="early_mustang_link">Early Mustang</a></li>
+      <li><a href="#" id="mustang_future_link">Future Mustang</a></li>
+      <li><a href="#" id="preservation_link">Preservation</a></li>
+      <li><a href="#" id="mustang_gen_link">Mustang</a></li>
+      <li><a href="#" id="sports_classics_link">Sports Classics</a></li>
+      <li><a href="#" id="collector_foreign_link">Foreign Collector</a></li>
+      <li><a href="#" id="mini_link">Mini</a></li>
+      <li><a href="#" id="amer_perform_link">American Performance</a></li>
+      <li><a href="#" id="collect_closed_link">Closed Collection</a></li>
+      <li><a href="#" id="collect_open_link">Open Collection</a></li>
+      <li><a href="#" id="future_classics_link">Future Classics</a></li>
     </ul>
   </div>
 </div>
@@ -213,7 +231,7 @@
      new google.maps.LatLng(38.049477, -84.597720),
      new google.maps.LatLng(38.049572, -84.598181)
    ];
-  
+
   var gen_parking_coord = [
     new google.maps.LatLng(38.049757, -84.598986),
     new google.maps.LatLng(38.048778, -84.599313),
@@ -221,14 +239,14 @@
     new google.maps.LatLng(38.049578, -84.598224),
     new google.maps.LatLng(38.049757, -84.598986)
     ];
-    
+
     var handicap_parking_coord = [
     new google.maps.LatLng(38.04969167879324,-84.59658801555634),
     new google.maps.LatLng(38.04932725549697, -84.59672212600708),
     new google.maps.LatLng(38.049231668758274,-84.59639489650726),
     new google.maps.LatLng(38.04960804082008,-84.59625542163849)
     ];
-    
+
     var car_club_coord = [
     new google.maps.LatLng(38.04758875217923,-84.59769308567047),
     new google.maps.LatLng(38.04704508802866, -84.5979505777359),
@@ -256,7 +274,7 @@
     fillColor: '#0BA9CC',
     fillOpacity: 0.15
   });
-    
+
     gen_parking = new google.maps.Polygon({
     paths: gen_parking_coord,
     strokeColor: '#00CCCC',
@@ -265,7 +283,7 @@
     fillColor: '#00CCCC',
     fillOpacity: 0.15
   });
-  
+
   vip_parking = new google.maps.Polygon({
     paths: vip_parking_coord,
     strokeColor: '#6600CC',
@@ -274,7 +292,7 @@
     fillColor: '#6600CC',
     fillOpacity: 0.35
   });
-  
+
    handicap_parking = new google.maps.Polygon({
     paths: handicap_parking_coord,
     strokeColor: '#2A82C1',
@@ -283,7 +301,7 @@
     fillColor: '#2A82C1',
     fillOpacity: 0.35
   });
-  
+
   car_club_area = new google.maps.Polygon({
     paths: car_club_coord,
     strokeColor: '#99FF33',
@@ -292,7 +310,7 @@
     fillColor: '#99FF33',
     fillOpacity: 0.35
   });
-  
+
   car_club_area.setMap(map);
   all_parking.setMap(map);
   show_field.setMap(map);
@@ -586,7 +604,7 @@
       vendors.setMap(map);
       food.setMap(map);
       show_field.setMap(map);
-    } 
+    }
 
    /////////////////////////////////////////////////////////////////////////////////////////////////
    //onZoom Listener
@@ -629,7 +647,7 @@
     map.setZoom(18);
     map.panTo( new google.maps.LatLng(38.04918643786036, -84.59779500961308));
   });
-  
+
   google.maps.event.addListener(handicap_parking, 'click', function() {
     var center = new google.maps.LatLng(38.049485146189056, -84.59646999835972);
     var infowindow = new google.maps.InfoWindow(
@@ -865,26 +883,35 @@
     map.panTo(center);
   });
 
-if(navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var pos = new google.maps.LatLng(position.coords.latitude,
-     position.coords.longitude);
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude,
+       position.coords.longitude);
 
-    marker = new google.maps.Marker({
-      map:map,
-      animation: google.maps.Animation.DROP,
-      position: pos
-    });
-
-          //map.setCenter(pos);
-        }, function() {
-          handleNoGeolocation(true);
+      // Check if within bounds
+      if (pos.lat() < 38.052606055057026 & pos.lat() > 38.042686996769866 & pos.lng() > -84.6028751134872 & pos.lng() < -84.58832681179042){
+        marker = new google.maps.Marker({
+          map:map,
+          animation: google.maps.Animation.DROP,
+          position: pos
         });
-} else {
-        // Browser doesn't support Geolocation
-        handleNoGeolocation(false);
+        var infowindow = new google.maps.InfoWindow(
+          { content: "You are here",
+          size: new google.maps.Size(50,50),
+          position: pos,
+          map: map
+        });
       }
-    }
+
+      map.panTo(new google.maps.LatLng( 38.04798015658998, -84.59683381523666));
+      map.setZoom(16);
+    }, function() {
+      handleNoGeolocation(true);
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+  }
 
     function handleNoGeolocation(errorFlag) {
       if (errorFlag) {
@@ -892,12 +919,7 @@ if(navigator.geolocation) {
       } else {
         var content = 'Error: Your browser doesn\'t support geolocation.';
       }
-
-      var options = {
-        map: map,
-        position: new google.maps.LatLng(38.04548406664232,275.3912882270813),
-        content: content
-      };
+    };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
       //Page Links   onClick Listeners
@@ -910,107 +932,77 @@ if(navigator.geolocation) {
     $('#vintage_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04802039474226, -84.59692597389221));
-
-      return false;
     })
 
     $('#antique_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.0479024027373, -84.5967449247837));
-
-      return false;
     })
 
     $('#early_mustang_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.047848634165646,-84.5971231162548));
-
-      return false;
     })
 
     $('#mustang_future_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.047708238264555, -84.5969407260418));
-
-      return false;
     })
 
     $('#preservation_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04764550809407, -84.59734976291656));
-
-      return false;
     })
 
     $('#mustang_gen_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04754095769048, -84.59710970520973));
-
-      return false;
     })
 
     $('#sports_classics_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04749913748724, -84.59640562534332));
-
-      return false;
     })
 
     $('#collector_foreign_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04763654663676, -84.5961856842041));
-
-      return false;
     })
 
     $('#mini_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.047779929822156, -84.59595501422882));
-
-      return false;
     })
 
     $('#amer_perform_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04720042105508, -84.59563314914703));
-
-      return false;
     })
 
     $('#collect_closed_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04754693200327, -84.59549903869629));
-
-      return false;
     })
 
     $('#collect_open_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04711678023568, -84.59532737731934));
-
-      return false;
     })
 
     $('#future_classics_link').click(function(){
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04746926589887, -84.59517180919647));
-
-      return false;
     })
 
     $('#car_club_link').click(function(){
       map.setZoom(16);
       map.panTo(new google.maps.LatLng(38.046234, -84.594770));
-
-      return false;
     })
 
     $('#general_parking_link').click(function(){
       map.setZoom(15);
       map.panTo(new google.maps.LatLng(38.04893, -84.59778));
-      
-      return false;
     })
 
-    
+
 </script>
