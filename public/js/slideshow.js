@@ -129,14 +129,7 @@ Slideshow.prototype.update_slide = function(){
   $('#slide_options').html(''); //empty options
   // Create each option
   for (var i=0;i<current_slideshow.current_slide().options.length;i++){
-    var href;
-    if (this.current_slide().options[i].link != null){
-      href = this.current_slide().options[i].link;
-    }
-    else{
-      href = "#"
-    }
-    $('#slide_options').append('<li><a class="btn btn-primary slide_option" href="'+ href +'" data-dest="'+ current_slideshow.current_slide().options[i].destination +'">'+ current_slideshow.current_slide().options[i].text +'</a></li>')
+    current_slideshow.create_option_button(current_slideshow.current_slide().options[i]);
   }
 
   // Click events for each option to continue down the path
@@ -148,11 +141,26 @@ Slideshow.prototype.update_slide = function(){
 
   // Create and link previous/back button
   if (this.current_slide_index != 0){
-    $('#slide_options').append('<li><a class="btn btn-warning slide_option" href="#"><i class="fa fa-angle-double-left"></i> Back</a></li>')
-    $('#slide_options li a').last().click(function(){
-      current_slideshow.change_slide(current_slideshow.current_slide().previous);
-    })
+    current_slideshow.create_back_button(this.current_slide());
   }
+}
+
+Slideshow.prototype.create_option_button = function(option){
+  var href;
+  if (option.link != null){
+    href = option.link;
+  }
+  else{
+    href = "#"
+  }
+  $('#slide_options').append('<li><a class="btn btn-primary slide_option" href="'+ href +'" data-dest="'+ option.destination +'">'+ option.text +'</a></li>')
+}
+
+Slideshow.prototype.create_back_button = function(slide){
+  $('#slide_options').append('<li><a class="btn btn-warning slide_option" href="#"><i class="fa fa-angle-double-left"></i> Back</a></li>')
+  $('#slide_options li a').last().click(function(){
+    slideshow.change_slide(slide.previous);
+  })
 }
 
 Slideshow.prototype.change_slide = function(index){

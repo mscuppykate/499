@@ -20,5 +20,17 @@ describe("Slideshow", function() {
     expect(slideshow.update_slide).toHaveBeenCalled();
     expect(slideshow.current_slide_index).toEqual(1);
     expect(slideshow.current_slide()).toEqual(slideshow.slides[1]);
+  });
+
+  it("should create option buttons", function(){
+    spyOn(slideshow, 'create_option_button');
+    slideshow.change_slide(2);
+    expect(slideshow.create_option_button).toHaveBeenCalled();
+  })
+
+  it("should create the back button", function(){
+    spyOn(slideshow, 'create_back_button');
+    slideshow.change_slide(1);
+    expect(slideshow.create_back_button).toHaveBeenCalled();
   })
 })
