@@ -146,7 +146,7 @@ Slideshow.prototype.update_slide = function(){
     }
   });
 
-  // Create and link previous button
+  // Create and link previous/back button
   if (this.current_slide_index != 0){
     $('#slide_options').append('<li><a class="btn btn-warning slide_option" href="#"><i class="fa fa-angle-double-left"></i> Back</a></li>')
     $('#slide_options li a').last().click(function(){
