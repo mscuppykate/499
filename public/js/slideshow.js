@@ -153,7 +153,7 @@ Slideshow.prototype.create_option_button = function(option){
   else{
     href = "#"
   }
-  $('#slide_options').append('<li><a class="btn btn-primary slide_option" href="'+ href +'" data-dest="'+ option.destination +'">'+ option.text +'</a></li>')
+  $('#slide_options').append('<li><a class="btn btn-success slide_option" href="'+ href +'" data-dest="'+ option.destination +'">'+ option.text +'</a></li>')
 }
 
 Slideshow.prototype.create_back_button = function(slide){
