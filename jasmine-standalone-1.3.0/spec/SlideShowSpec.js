@@ -3,7 +3,7 @@ describe("Slideshow", function() {
   // It instantiates all the slides and options used in the site.
 
   it("should setup properly", function(){
-    expect(slideshow.slides.length == 0).toEqual(false);
+    expect(slideshow.slides.length == 0).toBe(false);
   });
 
   it("should return the current slide index", function(){
@@ -15,7 +15,9 @@ describe("Slideshow", function() {
   });
 
   it("should update the current slide", function(){
+    spyOn(slideshow, 'update_slide');
     slideshow.change_slide(1);
+    expect(slideshow.update_slide).toHaveBeenCalled();
     expect(slideshow.current_slide_index).toEqual(1);
     expect(slideshow.current_slide()).toEqual(slideshow.slides[1]);
   })
