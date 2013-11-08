@@ -52,16 +52,33 @@
   var car_club_area;
   var show_car_circles;
   var bmw_car_club;
- var miata_car_club;
- var corvair_car_club;
- var italian_car_club;
- var viper_car_club;
- var brit_car_club;
- var cobra_car_club;
- var landrover_car_club;
- var jaguar_car_club;
- var corvette_club;
- var porsche_club;
+  var miata_car_club;
+  var corvair_car_club;
+  var italian_car_club;
+  var viper_car_club;
+  var brit_car_club;
+  var cobra_car_club;
+  var landrover_car_club;
+  var jaguar_car_club;
+  var corvette_club;
+  var porsche_club;
+  var show_cars;
+  var show_field;
+
+function hide_cars() {
+    show_field.setMap(map);
+    for (var i=0; i <= show_cars.length - 1; i++) {
+      show_cars[i].setMap(null);
+    }
+  }
+
+  function show_show_cars(){
+    show_field.setMap(null);
+    for (var i=0; i <= show_cars.length - 1; i++) {
+      show_cars[i].setMap(map);
+    }
+  }
+
   function initialize() {
     var mapOptions = {
       center: new google.maps.LatLng( 38.04798015658998, -84.59683381523666),
@@ -133,38 +150,26 @@ show_car_circles['future_classics'] = {
 };
 
 var car_circle;
+show_cars = [];
 var i = 0;
-  //function show_cars() {
-    for (var car in show_car_circles) {
-      var name = show_car_circles[car].name;
-      var showCarOptions = {
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35,
-        map: map,
-        center: show_car_circles[car].center,
-        radius: 11
-      };
-      // Add the circle for this to the map.
-      car_circle = new google.maps.Circle(showCarOptions);
-      attach_info_window(car_circle, car);
-      i = i + 1;
-    }
-  //}
 
-  // function hide_cars() {
-  //   for (var car in show_car_circles) {
-  //     var name = show_car_circles[car].name;
-  //     var showCarOptions = null;
-  //     // Add the circle for this to the map.
-  //     car_circle = new google.maps.Circle(showCarOptions);
-  //     attach_info_window(car_circle, car);
-  //     i = i + 1;
-  //   }
-  // }
-
+for (var car in show_car_circles) {
+  var name = show_car_circles[car].name;
+  var showCarOptions = {
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    center: show_car_circles[car].center,
+    radius: 11
+  };
+  // Add the circle for this to the map.
+  car_circle = new google.maps.Circle(showCarOptions);
+  show_cars.push(car_circle);
+  attach_info_window(car_circle, car);
+  i = i + 1;
+}
 
   function attach_info_window(circle, car){
     var infowindow = new google.maps.InfoWindow(
@@ -201,7 +206,6 @@ var i = 0;
   var handicap_parking;
 
   var all_parking;
-  var show_field;
 
   var show_field_coord = [
   new google.maps.LatLng(38.048120, -84.596953),
@@ -590,7 +594,7 @@ var i = 0;
       gen_parking.setMap(null);
       vip_parking.setMap(null);
       handicap_parking.setMap(null);
-      //hide_cars();
+      hide_cars();
 
       //now show large polygons
       car_club_area.setMap(map);
@@ -683,7 +687,7 @@ var i = 0;
   google.maps.event.addListener(show_field, 'click', function() {
     show_field.setMap(null); // Hide the big car club polygon
     // Show all the individual car club polygons
-    //show_cars();
+    show_show_cars();
     // Set map zoom and pan to location
     map.setZoom(18);
     map.panTo( new google.maps.LatLng(38.04769402134408, -84.59618203844605));
@@ -925,66 +929,79 @@ var i = 0;
     google.maps.event.addDomListener(window, 'load', initialize);
 
     $('#vintage_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04802039474226, -84.59692597389221));
     })
 
     $('#antique_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.0479024027373, -84.5967449247837));
     })
 
     $('#early_mustang_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.047848634165646,-84.5971231162548));
     })
 
     $('#mustang_future_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.047708238264555, -84.5969407260418));
     })
 
     $('#preservation_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04764550809407, -84.59734976291656));
     })
 
     $('#mustang_gen_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04754095769048, -84.59710970520973));
     })
 
     $('#sports_classics_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04749913748724, -84.59640562534332));
     })
 
     $('#collector_foreign_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04763654663676, -84.5961856842041));
     })
 
     $('#mini_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.047779929822156, -84.59595501422882));
     })
 
     $('#amer_perform_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04720042105508, -84.59563314914703));
     })
 
     $('#collect_closed_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04754693200327, -84.59549903869629));
     })
 
     $('#collect_open_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04711678023568, -84.59532737731934));
     })
 
     $('#future_classics_link').click(function(){
+      show_show_cars();
       map.setZoom(19);
       map.panTo(new google.maps.LatLng(38.04746926589887, -84.59517180919647));
     })
