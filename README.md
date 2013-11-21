@@ -10,7 +10,7 @@ From the home page, there are three options for a user to select:  Map, Info, an
 
 	Info:	Clicking this link will take you to the general Information page.  From here there are four more options:  Schedule, Guest 				Services, Judges Info, and Volunteering Info.
 
-			Schedule:			Clicking schedule will bring up a list of times and events scheduled for the Concours.  To view times, 							simply click a button and it will expand to reveal time and information.  Click the button again to collapse.
+			Schedule:			Clicking schedule will bring up a list of times and events scheduled for the Concours.  To view times, 							simply click a button and it will expand to reveal time and information.  Click the button again to 						collapse.
 
 			Guest Services:		Clicking guest services will show a button along with a list of of expandable buttons for first aid, lost 						and found, as well as a button for bathrooms.  To view info for first aid or lost and found, simply click a 					button and it will expand to reveal information.  Click the button again to collapse.  Clicking restroom 						will take you to the map to find the bathrooms.
 
