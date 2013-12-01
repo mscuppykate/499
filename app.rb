@@ -36,6 +36,11 @@ get "/guestservices" do
   erb :guestservices
 end
 
+get "/guestinfo" do
+  @alert = alert
+  erb :guestinfo
+end
+
 get "/judge" do
   @alert = alert
   erb :judge
