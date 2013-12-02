@@ -1,8 +1,12 @@
 /* Custom Styles */
 
-.btn {
+.btn-success{
 	color: #FFF;
 	background-color: #183d36; /* Keeneland Green */
 	border: 2px solid #AA9B70; /* Keeneland Gold(ish) */
 	margin-bottom: 10px;
+}
+
+.btn-success:focus{
+  box-shadow: none;
 }
