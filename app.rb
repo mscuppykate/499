@@ -11,16 +11,29 @@ helpers do
   def authorized?(security_level)
     @auth ||=  Rack::Auth::Basic::Request.new(request.env)
     if @auth.provided? and @auth.basic? and @auth.credentials
+      # Rewrite this if there is time, good enough for now
       if security_level == 'admin'
         if @auth.credentials == ['admin', 'admin']
           return true
         end
+      elsif security_level == 'organizer'
+        if (@auth.credentials == ['admin', 'admin'] or @auth.credentials == ['organizer', 'organizer'])
+          return true
+        end
       elsif security_level == 'judge'
-        if (@auth.credentials == ['admin', 'admin'] or @auth.credentials == ['judge', 'judge'])
+        if (@auth.credentials == ['admin', 'admin'] or @auth.credentials == ['judge', 'judge'] or @auth.credentials == ['organizer', 'organizer'])
           return true
         end
       elsif security_level == 'volunteer'
-        if (@auth.credentials == ['admin', 'admin'] or @auth.credentials == ['volunteer', 'volunteer'])
+        if (@auth.credentials == ['admin', 'admin'] or @auth.credentials == ['volunteer', 'volunteer'] or @auth.credentials == ['organizer', 'organizer'])
+          return true
+        end
+      elsif security_level == 'exhibitor'
+        if (@auth.credentials == ['admin', 'admin'] or @auth.credentials == ['exhibitor', 'exhibitor'] or @auth.credentials == ['organizer', 'organizer'])
+          return true
+        end
+      elsif security_level == 'vip'
+        if (@auth.credentials == ['admin', 'admin'] or @auth.credentials == ['vip', 'vip'] or @auth.credentials == ['organizer', 'organizer'])
           return true
         end
       else
