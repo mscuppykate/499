@@ -10,3 +10,21 @@
 .btn-success:focus{
   box-shadow: none;
 }
+
+#parking_color{
+  background-color: #0BA9CC;
+}
+
+#car_club_color{
+  background-color: #99FF33;
+}
+
+#show_car_color{
+  background-color: #663300;
+}
+
+.legend-color{
+  width: 5px;
+  padding: 0 5px;
+  margin: 0 5px;
+}
