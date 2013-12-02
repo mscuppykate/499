@@ -2,15 +2,33 @@ require 'sinatra'
 require 'json'
 
 helpers do
-  def protected!
-    return if authorized?
+  def protected!(security_level)
+    return if authorized?(security_level)
     headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
     halt 401, "Not authorized\n"
   end
 
-  def authorized?
+  def authorized?(security_level)
     @auth ||=  Rack::Auth::Basic::Request.new(request.env)
-    @auth.provided? and @auth.basic? and @auth.credentials and @auth.credentials == ['admin', 'admin']
+    if @auth.provided? and @auth.basic? and @auth.credentials
+      if security_level == 'admin'
+        if @auth.credentials == ['admin', 'admin']
+          return true
+        end
+      elsif security_level == 'judge'
+        if (@auth.credentials == ['admin', 'admin'] or @auth.credentials == ['judge', 'judge'])
+          return true
+        end
+      elsif security_level == 'volunteer'
+        if (@auth.credentials == ['admin', 'admin'] or @auth.credentials == ['volunteer', 'volunteer'])
+          return true
+        end
+      else
+        return false
+      end
+    else
+      return false
+    end
   end
 end
 
@@ -37,16 +55,19 @@ get "/guestservices" do
 end
 
 get "/judge" do
+  protected!('judge')
   @alert = alert
   erb :judge
 end
 
 get "/volunteerinfo*" do
+  protected!('volunteer')
   @alert = alert
   erb :volunteerinfo
 end
 
 get "/volunteer*" do
+  protected!('volunteer')
   @alert = alert
   erb :volunteer
 end
@@ -69,7 +90,7 @@ end
 get '/alert*' do
   @alert = alert
   # Auth check
-  protected!
+  protected!('admin')
 
   erb :alert
 end
