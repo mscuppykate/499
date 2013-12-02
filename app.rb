@@ -12,6 +12,8 @@ helpers do
     @auth ||=  Rack::Auth::Basic::Request.new(request.env)
     if @auth.provided? and @auth.basic? and @auth.credentials
       # Rewrite this if there is time, good enough for now
+
+      # Misc passwords and 'security levels'
       if security_level == 'admin'
         if @auth.credentials == ['admin', 'admin']
           return true
