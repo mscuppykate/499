@@ -7,6 +7,10 @@
 	margin-bottom: 10px;
 }
 
+a.btn-success{
+  color: #FFF;
+}
+
 .btn-success:focus{
   box-shadow: none;
 }
