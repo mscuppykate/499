@@ -80,6 +80,12 @@ get "/judge" do
   erb :judge
 end
 
+get "/judgeinfo" do
+  protected!('judge')
+  @alert = alert
+  erb :judgeinfo
+end
+
 get "/volunteerinfo*" do
   protected!('volunteer')
   @alert = alert

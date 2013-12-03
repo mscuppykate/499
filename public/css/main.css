@@ -34,3 +34,7 @@ a.btn-success{
   padding: 0 5px;
   margin: 0 5px;
 }
+
+.alignright {
+  float: right;
+}

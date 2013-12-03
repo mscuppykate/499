@@ -20,8 +20,8 @@
     <h4>Looking for something in particular?</h4>
     <h5>Showcases</h5>
     <ul class="list-unstyled">
-      <li><a href="#" id="vintage_link">Vintage</a></li>
-      <li><a href="#" id="antique_link">Antique</a></li>
+      <li><a href="#" id="vintage_link">Vintage</a></li><li class="alignright"><a href="#" id="bathrooms_link">Bathrooms</a></li>
+      <li><a href="#" id="antique_link">Antique</a></li><li class="alignright"><a href="#" id="vendors_link">Vendors</a></li>
       <li><a href="#" id="early_mustang_link">Early Mustang</a></li>
       <li><a href="#" id="mustang_future_link">Future Mustang</a></li>
       <li><a href="#" id="preservation_link">Preservation</a></li>
@@ -1096,6 +1096,42 @@ for (var car in show_car_circles) {
       map.setZoom(18);
       map.panTo(new google.maps.LatLng(38.047084991894344, -84.59717177357254));
     })
+
+    $('#bathrooms_link').click(function(){
+      var center = new google.maps.LatLng(38.04851723912264, -84.59609386082468);
+      map.setZoom(18);
+      map.panTo(center);
+      var infowindow = new google.maps.InfoWindow(
+      { content: "Bathrooms Located Inside Keene Barn",
+      size: new google.maps.Size(50,50),
+      position: center,
+      map: map
+      });
+      
+    })
+
+    $('#vendors_link').click(function(){
+      show_car_clubs();
+      map.setZoom(19);
+      map.panTo(new google.maps.LatLng(38.04873301494663, -84.59699742998657));
+      var infowindow = new google.maps.InfoWindow(
+      { content: "Food",
+      size: new google.maps.Size(50,50),
+      position: (new google.maps.LatLng(38.04892909325019, -84.5965508421856)),
+      map: map
+      });
+      var infowindow2 = new google.maps.InfoWindow(
+      { content: "Vendors",
+      size: new google.maps.Size(50,50),
+      position: (new google.maps.LatLng(38.0485915501854, -84.59717311467705)),
+      map: map
+      });
+    })
+
+
+
+
+
 
     function show_car_clubs(){
       car_club_area.setMap(null);
