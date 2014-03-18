@@ -101,7 +101,16 @@ function hide_cars() {
       disableDefaultUI: true,
       zoomControl: true,
       mapTypeId: google.maps.MapTypeId.SATELLITE
+      //add if that will check for users login permissions
+      //if userprofile == admin(
+      //add something for all shapes to make them editable
+      		//include the color edits as well
+      	//var polygonOptions = { 
+	//polygonedit option = true
+		}
     };
+//https://developers.google.com/maps/documentation/javascript/shapes#user-editable
+//above link is what wil need to be added when creating everything if the user is logged in as admin
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
     //   var kmlLayer = new google.maps.KmlLayer({
