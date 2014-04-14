@@ -1,5 +1,37 @@
 <div class="row">
     <h2><center>Admin Overview</center></h2>                 
 	<div>
-	</div>
+  <p></p>
+
+  <div class="row">
+    <div class="col-md-3">
+      <a href= https://mapsengine.google.com/map/edit?mid=zHXIS-clncvI.k6S94KdV9SSQ class="btn btn-success btn-block btn-lg">Map</a>
+    </div>
+  </div>
+ <div class="row">
+    <div class="col-md-3">
+      <a href="alert" class="btn btn-success btn-block btn-lg">Edit Alert</a>
+    </div>
+  </div>
+  <script type="text/javascript">
+  function UploadResults()
+  {
+    document.getElementById("file").onchange = function() {
+      document.getElementById("form").submit();
+    }
+    alert('Choose a File');
+  	document.getElementById("file").click();
+  }
+  </script>
+
+  <div class="row">
+    <div class="col-md-3">
+      <a href="javascript:UploadResults()" class="btn btn-success btn-block btn-lg">Upload Results</a>
+      <!-- This needs to be at the end of the list of buttons for spacing reasons. It isn't drawn, but it still occupies space -->
+      <form id="form" action="admin" method="post" enctype='multipart/form-data'>
+        <input id="file" type="file" name="file" style="visibility:hidden" />
+      </form>
+    </div>
+  </div>
+
 </div>

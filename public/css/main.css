@@ -3,7 +3,7 @@
 .btn-success{
 	color: #FFF;
 	background-color: #183d36; /* Keeneland Green */
-	border: 2px solid #AA9B70; /* Keeneland Gold(ish) */
+	border: 2px solid #AA9B70; /* Keeneland Gold(ish) AA9B70 */
 	margin-bottom: 10px;
 }
 
@@ -22,13 +22,16 @@ a.btn-success{
 }
 
 #car_club_color{
-  background-color: #99FF33;
+  background-color: #FFFF00;
 }
 
 #show_car_color{
   background-color: #663300;
 }
-
+#scout_area{
+	background-color: #66FF33;
+}
+	
 .legend-color{
   width: 5px;
   padding: 0 5px;

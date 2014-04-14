@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'sinatra'
 require 'json'
 
@@ -49,6 +50,8 @@ end
 
 alert = ""
 
+#below things that have the protected flag are when the auth will come up
+
 get "/" do
   @alert = alert
   erb :index, layout: :no_nav_layout
@@ -57,6 +60,11 @@ end
 get "/map*" do
   @alert = alert
   erb :map
+end
+
+get "/testmap" do
+	@alert = alert
+	erb :testmap
 end
 
 get "/help*" do
@@ -74,6 +82,14 @@ get "/guestinfo" do
   erb :guestinfo
 end
 
+#admin prompt to edit things 
+#need to add admin.erb page that will have all the editing features on it
+get "/admin" do 
+  protected!('admin')
+  @alert = alert
+  erb :admin
+end
+
 get "/judge" do
   protected!('judge')
   @alert = alert
@@ -84,6 +100,12 @@ get "/judgeinfo" do
   protected!('judge')
   @alert = alert
   erb :judgeinfo
+end
+
+get "/results" do
+	protected!('judge')
+	@alert = alert
+	erb :results
 end
 
 get "/volunteerinfo*" do
@@ -130,4 +152,12 @@ end
 get '/alert_data.json' do
   content_type :json
   {alert_text: alert.to_s}.to_json
+end
+
+post '/admin' do
+  File.open("results.csv", "w") do |f|
+    f.puts params[:file][:tempfile].read
+  end
+  @alert = "Upload complete"
+  erb :admin
 end
